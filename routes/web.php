@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Retweet;
+use App\Http\Controllers\Facebook;
+use App\Http\Controllers\Twitter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,25 +16,45 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('tweet');
+    return view('twitter');
 });
 
 Route::get(
     'tweet',
-    [Retweet::class, 'run']
+    [Twitter::class, 'tweet']
 );
 
 Route::get(
-    'list',
-    [Retweet::class, 'tweets']
+    'random',
+    [Twitter::class, 'random']
 );
 
 Route::get(
-    'heart',
-    [Retweet::class, 'heart']
+    'search',
+    [Twitter::class, 'search']
+);
+
+Route::get(
+    'favourite',
+    [Twitter::class, 'favourite']
 );
 
 Route::get(
     'retweet',
-    [Retweet::class, 'retweethashtag']
+    [Twitter::class, 'retweet']
+);
+
+Route::get(
+    'comment',
+    [Twitter::class, 'comment']
+);
+
+Route::get(
+    'delete',
+    [Twitter::class, 'delete']
+);
+
+Route::get(
+    "facebook",
+    [Facebook::class, "profile"]
 );

@@ -35,6 +35,12 @@ return [
         'api_secret' => env('TWITTER_API_SECRET'),
         'access_token' => env('TWITTER_ACCESS_TOKEN'),
         'access_token_secret' => env('TWITTER_ACCESS_TOKEN_SECRET')
+    ],
+
+    'facebook' => [
+        'app_id' => env('FACEBOOK_APP_ID'),
+        'app_secret' => env('FACEBOOK_APP_SECRET'),
+        'app_token' => env('FACEBOOK_APP_TOKEN')
     ]
 
 ];
